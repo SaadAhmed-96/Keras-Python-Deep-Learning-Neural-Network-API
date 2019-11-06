@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MobileNet/VGG16 in Browser</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container mt-5">
+            <div class="row">
+                    <div class="col-12">
+                        <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2" style="display: none">Loading Model</div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-3">
+                    <select id="model-selector" class="custom-select">
+                        <option selected disabled>Select Model</option>
+                        <option>MobileNet</option>
+                        <option>VGG16</option>
+                    </select>
+                </div>
+                <div class="col-8">
+                    <input id="image-selector" class="form-control border-0" type="file">
+                </div>
+                <div class="col-1">
+                    <button id="predict-button" class="btn btn-dark float-right">Predict</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" >
+                    <h2 class="ml-3">Predictions</h2>
+                    <ol id="prediction-list"></ol>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="ml-3">Image</h2>
+                    <img id="selected-image" class="ml-3" src="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+    <script src="imagenet_classes.js"></script>
+    <script src="predict.js"></script>
+
+
+</body>
+</html>
